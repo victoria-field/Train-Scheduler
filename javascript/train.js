@@ -56,7 +56,14 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var trainStart = childSnapshot.val().trainStart;
   var trainFrequency = childSnapshot.val().trainFrequency;
 
- 
+  var tFrequency = trainFrequency;
+    console.log(tFrequency + " **frequency");
+   
+    var firstTimeConverted = moment(trainStart, "hh:mm").subtract(1, "years");
+    console.log(firstTimeConverted + " first time converted");
+
+    
+
 // Assumptions
     var tFrequency = trainFrequency;
 
@@ -90,6 +97,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
   // Add each train's data into the table
   $("#trainTable > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" +
-  trainFrequency + "</td><td>" + nextTrain+ "</td><td>" + tMinutesTillTrain + "</td></tr>");
+  trainFrequency + "</td><td>" + nexttrain+ "</td><td>" + tminutesTillTrain + "</td></tr>");
 });
 
